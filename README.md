@@ -7,3 +7,7 @@
 - [Proposal](https://ml-heart-prediction.github.io/proposal)
 - [Midterm Report]()
 - [Final Report]()
+
+---
+
+Group 6
