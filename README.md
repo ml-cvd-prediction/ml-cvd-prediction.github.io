@@ -8,6 +8,3 @@
 - [Midterm Report]()
 - [Final Report]()
 
----
-
-Group 6
