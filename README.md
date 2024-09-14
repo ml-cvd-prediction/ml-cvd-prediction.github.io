@@ -5,5 +5,5 @@
 ## Contents
 
 - [Proposal](ml-heart-prediction/github.io/proposal)
-- [Midterm Report]
-- [Final Report]
+- [Midterm Report]()
+- [Final Report]()
