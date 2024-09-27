@@ -10,9 +10,9 @@ Provide an introduction of your topic and literature review of related work. Bri
 
 ✅Dataset Link (if applicable)
 
-Problem Definition: Identify a problem and motivate the need for a solution.
-
 ## Problem Definition
+Identify a problem and motivate the need for a solution.
+
 ✅Problem
 
 ✅Motivation
