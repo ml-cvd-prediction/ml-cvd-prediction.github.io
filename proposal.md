@@ -27,9 +27,10 @@ Present proposed solutions including specific data processing methods and machin
 ✅CS 7641: Unsupervised and Supervised Learning Methods Identified
 
 ✅CS 4641: Supervised or Unsupervised Learning Methods Identified (Supervised is recommended in general)
-(Potential) Results and Discussion: Identify several quantitative metrics you plan to use for the project (i.e. ML Metrics). Present goals in terms of these metrics, and state any expected results.
 
 ## (Potential) Results and Discussion
+Identify several quantitative metrics you plan to use for the project (i.e. ML Metrics). Present goals in terms of these metrics, and state any expected results.
+
 ✅3+ Quantitative Metrics
 
 ✅Project Goals
