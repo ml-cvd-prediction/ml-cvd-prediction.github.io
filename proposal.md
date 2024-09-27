@@ -36,7 +36,7 @@ Present proposed solutions including specific data processing methods and machin
 
 ✅Expected Results
 
-# References
+## References
 ✅3+ References (preferably peer reviewed)
 
 ✅1+ In-Text Citation Per Reference
