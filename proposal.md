@@ -57,13 +57,13 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 
 ## Contributors
 
-| Name     | Contribution                 |
-| -------- | ---------------------------- |
-| Suzan    | Website, Methods, Results    |
-| Natasha  | Results, Gantt Chart         |
-| Kalp     | Results & Discussion         |
-| Jim      | Problem Definition, Methods  |
-| Eric     | Intro/Background             |
+| Name      | Contribution                 |
+| --------  | ---------------------------- |
+| Suzan     | Website, Methods, Results    |
+| Natasha   | Results, Gantt Chart         |
+| Kalp      | Results & Discussion         |
+| Chih-Chun | Problem Definition, Methods  |
+| Eric      | Intro/Background             |
 
 ## References
 [^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
