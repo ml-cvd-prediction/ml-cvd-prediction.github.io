@@ -13,7 +13,7 @@ Both databases contains 13 features and a target variable specifying whether or 
 
 ## Problem Definition
 
-We want to use machine learning models to predict if someone has cardiovascular disease from various health metrics. Most of the prior literatures [^3] focused on supervised learning algorithms for making predictions; however, our project will focus on both unsupervised and supervised learning for more comprehensive results.
+We want to use machine learning models to predict if someone has cardiovascular disease from various health metrics. Most of the prior studies [^3] focused on supervised learning algorithms for making predictions; however, our project will focus on both unsupervised and supervised learning for more comprehensive results.
 
 ## Methods
 
