@@ -62,7 +62,7 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 | Suzan    | Website, Methods, Results    |
 | Natasha  | Results, Gantt Chart         |
 | Kalp     | Results & Discussion         |
-| Jim      | Problem definition, Methods  |
+| Jim      | Problem Definition, Methods  |
 | Eric     | Intro/Background             |
 
 ## References
