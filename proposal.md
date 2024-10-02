@@ -2,7 +2,7 @@
 
 ## Introduction/Background
 
-Cardiovascular diseases, especially coronary heart disease (CHD), account for a major portion of global mortality [1]. This has led to scientists collecting vast amount of data related to heart-disease and other conditions. With this data available, machine learning algorithms can better predict patients who are developing various kinds of diseases ranging from Diabetes to CVD [2]. We wish to use this data and further develop unsupervised learning techniques which can help us predict the disease without any labels.
+Cardiovascular diseases, especially coronary heart disease (CHD), account for a major portion of global mortality [^1]. This has led to scientists collecting vast amount of data related to heart-disease and other conditions. With this data available, machine learning algorithms can better predict patients who are developing various kinds of diseases ranging from Diabetes to CVD [^2]. We wish to use this data and further develop unsupervised learning techniques which can help us predict the disease without any labels.
 
 Provide an introduction of your topic and literature review of related work. Briefly explain your dataset and its features, and provide a link to the dataset if possible.
 
@@ -42,8 +42,7 @@ Identify several quantitative metrics you plan to use for the project (i.e. ML M
 ✅Expected Results
 
 ## References
-<a id="1">[1]</a> 
-S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
+[^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
 
 <a id="2">[2]</a>
 A. Dinh, S. Miertschin, A. Young, and S. D. Mohanty, “A data-driven approach to predicting diabetes and cardiovascular disease with Machine Learning - BMC Medical Informatics and Decision making,” SpringerLink, https://link.springer.com/article/10.1186/s12911-019-0918-5/metrics.
