@@ -51,6 +51,20 @@ For unsupervised models, we plan to use the following metrics:
 
 **Expected Results**: Based on the existing literature, we expect to predict heart disease accuracy scores of 95%+ for supervised models. Many papers have conflicting results on what the best algorithm is, so our goal is perform a similar study to determine the best algorithm via quantitative metrics. Furthermore, we expect clustering methods to give an accurate answer as to whether the disease is present or not.
 
+## Timeline
+
+See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
+
+## Contributors
+
+| Name     | Contribution                 |
+| -------- | ---------------------------- |
+| Suzan    | Website, Methods, Results    |
+| Natasha  | Results, Gantt Chart         |
+| Kalp     | Results & Discussion         |
+| Jim      | Problem definition, Methods  |
+| Eric     | Intro/Background             |
+
 ## References
 [^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
 
