@@ -37,13 +37,19 @@ Lastly, we want to use these supervised learning techniques:
 5. **Decision Tree**: This method usually works well when the data is discrete or categorical.
 
 ## (Potential) Results and Discussion
-Identify several quantitative metrics you plan to use for the project (i.e. ML Metrics). Present goals in terms of these metrics, and state any expected results.
+To evaluate our supervised learning models, we plan to use the following metrics:
+1. Accuracy
+2. F1 Score
+3. Precision
+4. Recall
 
-✅3+ Quantitative Metrics
+For unsupervised models, we plan to use the following metrics:
+1. Completeness Score
+2. Fowlkes-Mallows Score
 
-✅Project Goals
+**Project Goals**: Not many studies have looked at unsupervised learning for this problem, so want to focus on how accurately unsupervised models cluster patient records. While unsupervised algorithms cannot provide comparisons to ground truth values, it is possible to create mappings between identified labels and clusters to directly use the metrics.
 
-✅Expected Results
+**Expected Results**: Based on the existing literature, we expect to predict heart disease accuracy scores of 95%+ for supervised models. Many papers have conflicting results on what the best algorithm is, so our goal is perform a similar study to determine the best algorithm via quantitative metrics. Furthermore, we expect clustering methods to give an accurate answer as to whether the disease is present or not.
 
 ## References
 [^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
