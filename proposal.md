@@ -4,21 +4,16 @@
 
 Cardiovascular diseases, especially coronary heart disease (CHD), account for a major portion of global mortality [^1]. This has led to scientists collecting vast amount of data related to heart-disease and other conditions. With this data available, machine learning algorithms can better predict patients who are developing various kinds of diseases ranging from Diabetes to CVD [^2]. We wish to use this data and further develop unsupervised learning techniques which can help us predict the disease without any labels.
 
-We plan to explore these two datasets:
+We plan to explore these two datasets: [Cardiovascular Heart Disease Dataset](https://data.mendeley.com/datasets/dzz48mvjht/1)
 
-<ol type="a">
-  <li>[Cardiovascular Heart Disease Dataset](https://data.mendeley.com/datasets/dzz48mvjht/1) from the Mendeley database</li>
-  <li>[Heart Disease Cleveland Dataset](https://archive.ics.uci.edu/dataset/45/heart+disease) from the UC Irvine Machine Learning Repository</li>
-</ol>
+1. [Cardiovascular Heart Disease Dataset](https://data.mendeley.com/datasets/dzz48mvjht/1) from the Mendeley database
+2. [Heart Disease Cleveland Dataset](https://archive.ics.uci.edu/dataset/45/heart+disease) from the UC Irvine Machine Learning Repository
 
 Both databases contains 13 features and a target variable specifying whether or not the patient was diagnosed with heart disease. They have 8 nominal values and 5 numeric values including age, blood pressure, and cholestrol levels. 
 
 ## Problem Definition
-Identify a problem and motivate the need for a solution.
 
-✅Problem
-
-✅Motivation
+We want to use machine learning models to predict if someone has cardiovascular disease from various health metrics. Most of the prior literatures [^3] focused on supervised learning algorithms for making predictions; however, our project will focus on both unsupervised and supervised learning for more comprehensive results.
 
 ## Methods
 Present proposed solutions including specific data processing methods and machine learning algorithms, and elaborate on why you think each will be effective. It is recommended to identify specific functions/classes in existing packages and libraries (i.e. scikit-learn) rather than coding the algorithms from scratch.
