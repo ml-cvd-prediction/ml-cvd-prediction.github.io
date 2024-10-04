@@ -19,9 +19,9 @@ We want to use machine learning models to predict if someone has cardiovascular 
 
 We plan to use these data pre-processing methods:
 
-1. **Dimensionality Reduction**: We can combine correlated features to not only reduce the computational time and cost but also lead to better model performance. 
-2. **Data Cleaning**: For missing values, we can put in temporary median or mean values computed from the entire dataset so that our algorithms work well.
-3. **Data Augmentation**: We can utilize data augmentation to generate new data if we have too little data for a specific algorithm to work well.
+1. **Dimensionality Reduction**: We can combine correlated features using methods like PCA to not only reduce the computational time and cost but also lead to better model performance. 
+3. **Data Cleaning**: For missing values, we can put in temporary median or mean values computed from the entire dataset so that our algorithms work well.
+4. **Data Augmentation**: We can utilize data augmentation to generate new data if we have too little data for a specific algorithm to work well.
 
 We plan to use these unsupervised learning techniques:
 
