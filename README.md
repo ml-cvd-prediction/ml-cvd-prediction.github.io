@@ -5,6 +5,6 @@
 ## Contents
 
 - [Proposal](https://ml-cvd-prediction.github.io/proposal)
-- [Midterm Report]()
+- [Midterm Report](https://ml-cvd-prediction.github.io/midterm_report)
 - [Final Report]()
 
