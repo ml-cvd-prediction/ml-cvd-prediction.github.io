@@ -22,3 +22,32 @@ In this step, we combined the Mendeley and Cleveland datasets into one. This is 
 
 
 We found that the patients represented in the Cleveland dataset are on average healthier than those in the Mendeley dataset (lower cholestrol, lower max heart rates, etc.), so combining the datasets makes an overall more representative dataset of different patient types. It also simplifies the number of dataset we have to apply machine learning algorithms to.
+
+## PCA Feature Reduction Summary Report
+In this step, we apply PCA to reduce the dataset’s dimensionality while preserving as much information as possible. PCA helped identify the main patterns in the data by transforming the original features into new, uncorrelated components.
+
+Results:
+
+Explained Variance: The first few principal components capture the majority of the variance:
+
+PC1 captures ~17.1% of the variance.
+PC2 captures ~12.4%.
+PC3, PC4, and PC5 each capture between 8-11%.
+The rest of the components capture less but together, the components used explain around 95% of the dataset’s variance, meaning they retain most of the information in fewer dimensions.
+Feature Influence:
+
+PC1 is most influenced by PCT, noofmajorvessels, and slope, suggesting these features contribute significantly to the data’s overall structure.
+PC2 focuses on chestpain, oldpeak, and age, capturing another aspect of the data.
+PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gender and serumcholestrol, and PC4 focusing on PCG and maxheartrate.
+Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observations cluster or separate in this reduced space, which can reveal patterns or relationships not easily visible in the high-dimensional data.
+
+We found that PCA effectively reduced the dataset’s complexity, retaining the main data structure and revealing which feature combinations contribute most to each principal component. This reduction will make further analysis or modeling more efficient and focused on the most informative aspects of the data.
+
+
+
+
+
+
+
+
+
