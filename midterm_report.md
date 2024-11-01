@@ -39,6 +39,10 @@ In this step, we combined the Mendeley and Cleveland datasets into one. This is 
 
 We found that the patients represented in the Cleveland dataset are on average healthier than those in the Mendeley dataset (lower cholestrol, lower max heart rates, etc.), so combining the datasets makes an overall more representative dataset of different patient types. It also simplifies the number of dataset we have to apply machine learning algorithms to.
 
+### Data Visualization
+
+Someone please make a heatmap like the one in Kalp's paper.
+
 ### Decision Tree Classifier
 
 To fine-tune our decision tree classifier, we first decided on the best max depth. To better understand how a deicison tree works with our data, we visualized what the tree looked like with a max depth of 3. This decision tree makes sense as values such as low chestpain would indicate that a patient does not have the diease.
@@ -49,6 +53,14 @@ Then, we incremented the depth all the way to 15, and found that a depth of 7 yi
 
 ![image info](./public/dt.png)
 
+We performed a similar experiment for Min Samples Leaf and found that a value of 2 yields the highest accuracy.
+
+With these changes, we got a decision tree classifier accuracy of 91%.
+(We still need precision, recall, F1-score, confusion matrix, etc.)
+
+### Random Forest
+
+### Logistic Regression
 
 
 ### PCA Feature Reduction Summary Report
@@ -70,6 +82,8 @@ PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gend
 Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observations cluster or separate in this reduced space, which can reveal patterns or relationships not easily visible in the high-dimensional data.
 
 We found that PCA effectively reduced the dataset’s complexity, retaining the main data structure and revealing which feature combinations contribute most to each principal component. This reduction will make further analysis or modeling more efficient and focused on the most informative aspects of the data.
+
+Eric please put a picture here.
 
 ## Timeline
 
