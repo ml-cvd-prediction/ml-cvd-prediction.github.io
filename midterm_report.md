@@ -56,7 +56,11 @@ Then, we incremented the depth all the way to 15, and found that a depth of 7 yi
 We performed a similar experiment for Min Samples Leaf and found that a value of 2 yields the highest accuracy.
 
 With these changes, we got a decision tree classifier accuracy of 91%.
+(We still need precision, recall, F1-score, confusion matrix, etc.)
 
+### Random Forest
+
+### Logistic Regression
 
 
 ### PCA Feature Reduction Summary Report
@@ -78,6 +82,8 @@ PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gend
 Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observations cluster or separate in this reduced space, which can reveal patterns or relationships not easily visible in the high-dimensional data.
 
 We found that PCA effectively reduced the dataset’s complexity, retaining the main data structure and revealing which feature combinations contribute most to each principal component. This reduction will make further analysis or modeling more efficient and focused on the most informative aspects of the data.
+
+Eric please put a picture here.
 
 ## Timeline
 
