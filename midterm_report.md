@@ -1,4 +1,4 @@
-# Midterm Report
+<img width="617" alt="image" src="https://github.com/user-attachments/assets/2b439ca8-2c35-4eb8-ad43-64cf514b9d3e"># Midterm Report
 
 ## Introduction
 
@@ -83,7 +83,8 @@ Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observation
 
 We found that PCA effectively reduced the dataset’s complexity, retaining the main data structure and revealing which feature combinations contribute most to each principal component. This reduction will make further analysis or modeling more efficient and focused on the most informative aspects of the data.
 
-Eric please put a picture here.
+<img width="617" alt="image" src="https://github.com/user-attachments/assets/9c255295-bbc8-4796-8d85-b4ec57d76958">
+
 
 ## Timeline
 
