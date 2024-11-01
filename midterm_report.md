@@ -1,4 +1,4 @@
-<img width="617" alt="image" src="https://github.com/user-attachments/assets/2b439ca8-2c35-4eb8-ad43-64cf514b9d3e"># Midterm Report
+# Midterm Report
 
 ## Introduction
 
