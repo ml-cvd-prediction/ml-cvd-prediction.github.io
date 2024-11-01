@@ -39,6 +39,10 @@ In this step, we combined the Mendeley and Cleveland datasets into one. This is 
 
 We found that the patients represented in the Cleveland dataset are on average healthier than those in the Mendeley dataset (lower cholestrol, lower max heart rates, etc.), so combining the datasets makes an overall more representative dataset of different patient types. It also simplifies the number of dataset we have to apply machine learning algorithms to.
 
+### Data Visualization
+
+Someone please make a heatmap like the one in Kalp's paper.
+
 ### Decision Tree Classifier
 
 To fine-tune our decision tree classifier, we first decided on the best max depth. To better understand how a deicison tree works with our data, we visualized what the tree looked like with a max depth of 3. This decision tree makes sense as values such as low chestpain would indicate that a patient does not have the diease.
@@ -48,6 +52,10 @@ To fine-tune our decision tree classifier, we first decided on the best max dept
 Then, we incremented the depth all the way to 15, and found that a depth of 7 yielded the highest accuracy
 
 ![image info](./public/dt.png)
+
+We performed a similar experiment for Min Samples Leaf and found that a value of 2 yields the highest accuracy.
+
+With these changes, we got a decision tree classifier accuracy of 91%.
 
 
 
