@@ -19,7 +19,7 @@ We want to use machine learning models to predict if someone has cardiovascular 
 
 ### Data Cleaning
 
-Some values of feature noofmajorvessels are missing, so we decided to take the ceiling of the mean from the rest of the dataset. We chose to use the ceiling to reflect preferences to account for potential disease risk instead of just underestimating it. 
+Some feature values, such as number of major vessels, are missing, so we decided to take the ceiling of the mean from the rest of the dataset to fill in the missing values. We chose to use the ceiling to reflect preferences to account for potential disease risk instead of just underestimating it. 
 
 In addition, we combined the Mendeley and Cleveland datasets into one. This is a table of all the features and what they mean:
 
@@ -64,9 +64,13 @@ We found that PCA effectively reduced the dataset’s complexity, retaining the 
 
 ## Methods - Machine Learning Model
 
-### Decision Tree Classifier
+### Decision Tree Classifier (Supervised Learning)
 
-We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to train our data through supervised learning. For this model, we directly used all features after data cleaning to train our model. Decision Tree Classifier was chosen because we could easily visualize in a tree what features help determine the predicted label as it creates a clear cutoffs for a binary outcome.
+We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to train our model. Decision Tree Classifier was chosen because we could easily visualize in a tree what features help determine the predicted label as it creates a clear cutoffs for a binary outcome. For this model, we directly used all features after data cleaning to train our model. 
+
+### KMeans (Unsupervised Learning)
+
+We used [KMeans from Sci-Kit Learn](https://scikit-learn.org/1.5/modules/generated/sklearn.cluster.KMeans.html) to train our model. KMeans is able to quickly converge to k cluster centroids and find out the typical values of features for a group that have cardiovascular diseases, making results highly interpretable. For our project, we first tried using all features with KMeans, then later with partial features after PCA to evaluate if a better model can be trained. We also tried various values of K to determine the best outcome for a specific number of features. 
 
 ## Results and Discussion
 
@@ -74,17 +78,42 @@ We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/d
 
 To fine-tune our decision tree classifier, we first decided on the best max depth. To better understand how a deicison tree works with our data, we visualized what the tree looked like with a max depth of 3. This decision tree makes sense as values such as low chestpain would indicate that a patient does not have the diease.
 
-![image info](./public/dt-3.png)
+![Decision Tree with Max Depth of 3](./public/dt-3.png)
 
 Then, we incremented the depth all the way to 15, and found that a depth of 7 yielded the highest accuracy
 
-![image info](./public/dt.png)
+![Decision Tree Classifier Depth vs Accuracy](./public/dt.png)
 
 We performed a similar experiment for Min Samples Leaf and found that a value of 2 yields the highest accuracy.
 
-With these changes, we got a decision tree classifier accuracy of 91%.
-(We still need precision, recall, F1-score, confusion matrix, etc.)
+With these changes, we got the following score for decision tree. Accuracy: 0.9042, F1 Score: 0.9123, Precision: 0.9353, Recall: 0.8904. Almost all the scores were above 90%, which shows that decision tree is an effective model to use for this dataset.
 
+For next steps, we can potentially feed in features extracted from PCA to see if a better model can be trained.
+
+### KMeans
+
+We first trained KMeans through all features and tested with the amount of cluster k. We were able to see that with k=2 clusters, the model performed the best. 
+
+![KMeans Clustering Score for all Features](./public/kmeans-3.png)
+
+However, we wondered if the high dimensionality caused such a low high score. Thus, we decided to extract information from PCA to get a few features to use. From PCA, we are able to see that a few features appear frequently accross the tops of each PC, including
+- Fasting Blood Sugar: Appears in PC1, PC6, PC7, PC9, PC10, and PC11.
+- Resting BP: Appears in PC1, PC4, PC6, PC8, PC9, and PC11.
+- Chest Pain: Appears in PC2, PC3, PC5, PC7, PC8, and PC11.
+- Age: Appears in PC2, PC4, PC5, and PC7.
+- Serum Cholesterol: Appears in PC1, PC3, PC9, and PC11.
+
+We tested KMeans with the top 2, 3, 4, and 5 features, along with various amount of cluster k to see which one performs the best. 
+
+![KMeans Clustering Score after PCA](./public/kmeans-1.png)
+
+In the image, we were able to see that with 2 features (Fasting Blood Sugar and Resting BP) and 2 clusters, we are able to achieve the best scores : Completeness Score=0.1569, Fowlkes-Mallows Score=0.5934, and Silhouette Score=0.6487.
+
+![Scatter Plot Showing Cluster vs Actual](./public/kmeans-2.png)
+
+On the left graph, we can see how KMeans cluster the dataset. On the right graph, we can see the actual labels of those data. Data in the middle are hard for KMeans to differentiate, which can explain why all three top scores are still rather low, especially the completeness score, where data points in each cluster are often mixed in the middle range.
+
+For next steps, we can potentially experiment with various feature pairs to produce a better KMeans model.
 
 ## Timeline
 
