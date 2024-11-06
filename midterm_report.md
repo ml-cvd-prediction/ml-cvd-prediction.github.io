@@ -9,17 +9,19 @@ We plan to explore these two datasets:
 1. [Cardiovascular Heart Disease Dataset](https://data.mendeley.com/datasets/dzz48mvjht/1) from the Mendeley database
 2. [Heart Disease Cleveland Dataset](https://archive.ics.uci.edu/dataset/45/heart+disease) from the UC Irvine Machine Learning Repository
 
-Both databases contains 13 features and a target variable specifying whether or not the patient was diagnosed with heart disease. They have 8 nominal values and 5 numeric values including age, blood pressure, and cholestrol levels. 
+Both databases contains 12 features and a target variable specifying whether or not the patient was diagnosed with heart disease. They have 6 nominal values and 6 numeric values including age, blood pressure, and cholestrol levels. 
 
 ## Problem Definition
 
 We want to use machine learning models to predict if someone has cardiovascular disease from various health metrics. Most of the prior studies [^3] focused on supervised learning algorithms for making predictions; however, our project will focus on both unsupervised and supervised learning for more comprehensive results.
 
-## Methods
+## Methods - Data Processing
 
 ### Data Cleaning
 
-In this step, we combined the Mendeley and Cleveland datasets into one. This is a table of all the features and what they mean:
+Some values of feature noofmajorvessels are missing, so we decided to take the ceiling of the mean from the rest of the dataset. We chose to use the ceiling to reflect preferences to account for potential disease risk instead of just underestimating it. 
+
+In addition, we combined the Mendeley and Cleveland datasets into one. This is a table of all the features and what they mean:
 
 | Feature           | Values                | 
 | :---------------- | :------:              | 
@@ -36,12 +38,37 @@ In this step, we combined the Mendeley and Cleveland datasets into one. This is 
 | slope             |  1: upsloping, 2: flat, 3: downsloping, slope of the ST segment during peak exercise   | 
 | noofmajorvessels  |  0-3   | 
 
-
 We found that the patients represented in the Cleveland dataset are on average healthier than those in the Mendeley dataset (lower cholestrol, lower max heart rates, etc.), so combining the datasets makes an overall more representative dataset of different patient types. It also simplifies the number of dataset we have to apply machine learning algorithms to.
 
-### Data Visualization
+### PCA Feature Reduction
 
-Someone please make a heatmap like the one in Kalp's paper.
+We realized that using all 12 features caused some of our models to be achieving low scores. Thus, we decided to apply [PCA from Ski-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.PCA.html) to reduce the dataset’s dimensionality while preserving as much information as possible. PCA helped identify the main patterns in the data by transforming the original features into new, uncorrelated components.
+
+Result shows that the first few principal components capture the majority of the variance:
+
+PC1 captures ~17.1% of the variance.
+PC2 captures ~12.4%.
+PC3, PC4, and PC5 each capture between 8-11%.
+The rest of the components capture less but together, the components used explain around 95% of the dataset’s variance, meaning they retain most of the information in fewer dimensions.
+Feature Influence:
+
+PC1 is most influenced by PCT, noofmajorvessels, and slope, suggesting these features contribute significantly to the data’s overall structure.
+PC2 focuses on chestpain, oldpeak, and age, capturing another aspect of the data.
+PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gender and serumcholestrol, and PC4 focusing on PCG and maxheartrate.
+
+Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observations cluster or separate in this reduced space, which can reveal patterns or relationships not easily visible in the high-dimensional data.
+
+We found that PCA effectively reduced the dataset’s complexity, retaining the main data structure and revealing which feature combinations contribute most to each principal component. This reduction will make further analysis or modeling more efficient and focused on the most informative aspects of the data.
+
+<img width="617" alt="image" src="https://github.com/user-attachments/assets/9c255295-bbc8-4796-8d85-b4ec57d76958">
+
+## Methods - Machine Learning Model
+
+### Decision Tree Classifier
+
+We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to train our data through supervised learning. For this model, we directly used all features after data cleaning to train our model. Decision Tree Classifier was chosen because we could easily visualize in a tree what features help determine the predicted label as it creates a clear cutoffs for a binary outcome.
+
+## Results and Discussion
 
 ### Decision Tree Classifier
 
@@ -57,33 +84,6 @@ We performed a similar experiment for Min Samples Leaf and found that a value of
 
 With these changes, we got a decision tree classifier accuracy of 91%.
 (We still need precision, recall, F1-score, confusion matrix, etc.)
-
-### Random Forest
-
-### Logistic Regression
-
-
-### PCA Feature Reduction Summary Report
-In this step, we apply PCA to reduce the dataset’s dimensionality while preserving as much information as possible. PCA helped identify the main patterns in the data by transforming the original features into new, uncorrelated components.
-
-Results:
-
-Explained Variance: The first few principal components capture the majority of the variance:
-
-PC1 captures ~17.1% of the variance.
-PC2 captures ~12.4%.
-PC3, PC4, and PC5 each capture between 8-11%.
-The rest of the components capture less but together, the components used explain around 95% of the dataset’s variance, meaning they retain most of the information in fewer dimensions.
-Feature Influence:
-
-PC1 is most influenced by PCT, noofmajorvessels, and slope, suggesting these features contribute significantly to the data’s overall structure.
-PC2 focuses on chestpain, oldpeak, and age, capturing another aspect of the data.
-PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gender and serumcholestrol, and PC4 focusing on PCG and maxheartrate.
-Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observations cluster or separate in this reduced space, which can reveal patterns or relationships not easily visible in the high-dimensional data.
-
-We found that PCA effectively reduced the dataset’s complexity, retaining the main data structure and revealing which feature combinations contribute most to each principal component. This reduction will make further analysis or modeling more efficient and focused on the most informative aspects of the data.
-
-<img width="617" alt="image" src="https://github.com/user-attachments/assets/9c255295-bbc8-4796-8d85-b4ec57d76958">
 
 
 ## Timeline
