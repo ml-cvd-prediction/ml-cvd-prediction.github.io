@@ -117,6 +117,14 @@ Using 2 clusters in KMeans and the given labels, we attempted to see how well th
 
 For next steps, we can potentially experiment with various feature pairs to produce a better KMeans model.
 
+### GMM
+
+We used a similar procedure for testing GMM as we did for KMeans. We first tried with different value of number of components in the Gaussian mixture and we found that that it worked best for number of components as 2, which is as expected. We got the following plot for GMM after applying PCA for getting reduced number of features.
+
+![GMM Clustering Score after PCA](./public/gmm_output.png)
+
+Using 2 components in GMM and the given labels, we attempted to see how well the model is able to seperate the labels too. This did not yield very strong results with a 56 percent accuracy obtained using GMM model. For the future, we can try seperating on a redcuded feature set and try other methods to potentially increase the accuracy.
+
 ## Timeline
 
 See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
