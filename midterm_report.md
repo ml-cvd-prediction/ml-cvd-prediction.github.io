@@ -113,6 +113,8 @@ In the image, we were able to see that with 2 features (Fasting Blood Sugar and 
 
 On the left graph, we can see how KMeans cluster the dataset. On the right graph, we can see the actual labels of those data. Data in the middle are hard for KMeans to differentiate, which can explain why all three top scores are still rather low, especially the completeness score, where data points in each cluster are often mixed in the middle range.
 
+Using 2 clusters in KMeans and the given labels, we attempted to see how well the model is able to seperate the labels too. This did not yield very strong results with a 57 percent accuracy obtained using KMeans model. For the future, we can try seperating on a redcuded feature set and try other methods to potentially increase the accuracy.
+
 For next steps, we can potentially experiment with various feature pairs to produce a better KMeans model.
 
 ## Timeline
