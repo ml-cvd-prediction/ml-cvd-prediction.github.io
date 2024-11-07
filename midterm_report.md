@@ -72,6 +72,9 @@ We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/d
 
 We used [KMeans from Sci-Kit Learn](https://scikit-learn.org/1.5/modules/generated/sklearn.cluster.KMeans.html) to train our model. KMeans is able to quickly converge to k cluster centroids and find out the typical values of features for a group that have cardiovascular diseases, making results highly interpretable. For our project, we first tried using all features with KMeans, then later with partial features after PCA to evaluate if a better model can be trained. We also tried various values of K to determine the best outcome for a specific number of features. 
 
+### GMM (Unsupervised Learning)
+We used [GMM from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.mixture.GaussianMixture.html) to train our model. GMM is able to quickly converge to a given number of components and find out the typical values of features for a group that have cardiovascular diseases, making results highly interpretable. For our project, we first tried using all features with GMM, then later with partial features after PCA to evaluate if a better model can be trained. We also tried various values for the number of components to determine the best outcome for a specific number of features. 
+
 ## Results and Discussion
 
 ### Decision Tree Classifier
@@ -120,6 +123,12 @@ For next steps, we can potentially experiment with various feature pairs to prod
 ### GMM
 
 We used a similar procedure for testing GMM as we did for KMeans. We first tried with different value of number of components in the Gaussian mixture and we found that that it worked best for number of components as 2, which is as expected. We got the following plot for GMM after applying PCA for getting reduced number of features.
+
+For 2 features and 2 components, the scores obtained were:
+Completeness Score = 0.12
+Fowlkes-Mallows Score = 0.583
+Silhouette Score = 0.637
+
 
 ![GMM Clustering Score after PCA](./public/gmm_output.png)
 
