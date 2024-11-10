@@ -4,12 +4,12 @@
 
 Cardiovascular disease (CVD), especially coronary heart disease (CHD), accounts for a major portion of global mortality [^1]. This has led to scientists collecting vast amount of data related to heart-disease and other conditions. With this data available, machine learning algorithms can better predict patients who are developing various kinds of diseases ranging from Diabetes to CVD [^2]. Research into which supervised learning techniques are best for CVD prediction is still ongoing into 2024 [^4], but we wish to also use this data to further develop unsupervised learning techniques since they can help us predict the disease without any labels.
 
-We plan to explore these two datasets:
+We are exploring these two datasets:
 
 1. [Cardiovascular Heart Disease Dataset](https://data.mendeley.com/datasets/dzz48mvjht/1) from the Mendeley database
 2. [Heart Disease Cleveland Dataset](https://archive.ics.uci.edu/dataset/45/heart+disease) from the UC Irvine Machine Learning Repository
 
-Both databases contains 12 features and a target variable specifying whether or not the patient was diagnosed with heart disease. They have 6 nominal values and 6 numeric values including age, blood pressure, and cholestrol levels. 
+Both databases contains 12 features and a target variable specifying whether or not the patient was diagnosed with heart disease. They have 6 nominal values and 6 numeric values including age, blood pressure, and cholestrol levels.
 
 ## Problem Definition
 
@@ -19,9 +19,9 @@ We want to use machine learning models to predict if someone has cardiovascular 
 
 ### Data Cleaning
 
-Some feature values, such as number of major vessels, are missing, so we decided to take the ceiling of the mean from the rest of the dataset to fill in the missing values. We chose to use the ceiling to reflect preferences to account for potential disease risk instead of just underestimating it. 
+Some feature values, such as number of major vessels, are missing, so we decided to take the the mean from the rest of the column to fill in these missing values. We chose to use the ceiling of the mean specifically so we would not underestimate disease risk.
 
-In addition, we combined the Mendeley and Cleveland datasets into one. This is a table of all the features and what they mean:
+In addition, we combined the Mendeley and Cleveland datasets into one-- resulting in 1303 samples in total, 303 from the Cleveland dataset and 800 from the Mendeley dataset. This is a table of all the features and what they mean:
 
 | Feature           | Values                | 
 | :---------------- | :------:              | 
@@ -38,7 +38,11 @@ In addition, we combined the Mendeley and Cleveland datasets into one. This is a
 | slope             |  1: upsloping, 2: flat, 3: downsloping, slope of the ST segment during peak exercise   | 
 | noofmajorvessels  |  0-3   | 
 
-We found that the patients represented in the Cleveland dataset are on average healthier than those in the Mendeley dataset (lower cholestrol, lower max heart rates, etc.), so combining the datasets makes an overall more representative dataset of different patient types. It also simplifies the number of dataset we have to apply machine learning algorithms to.
+For our target variable, 1 represents the presence of heart disease and 0 represents the absence of it. Using data from both datasets, we were able to construct a dataset that had an even number of patients from both target cases, with presence of heart disease being slightly overrepresented.
+
+![Target vs Number of Patient Records](./public/targetvs.png)
+
+We also found that the patients represented in the Cleveland dataset are on average healthier than those in the Mendeley dataset (lower cholestrol, lower max heart rates, etc.), so combining the datasets makes an overall more representative dataset of different patient types. This will help prevent overfitting when we run our machine learning algorithms. It also simplifies the number of dataset we have to apply machine learning algorithms to.
 
 ### PCA Feature Reduction
 
@@ -54,7 +58,7 @@ Feature Influence:
 
 PC1 is most influenced by PCT, noofmajorvessels, and slope, suggesting these features contribute significantly to the data’s overall structure.
 PC2 focuses on chestpain, oldpeak, and age, capturing another aspect of the data.
-PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gender and serumcholestrol, and PC4 focusing on PCG and maxheartrate.
+PC3 and PC4 also capture unique feature combinations, with PC3 highlighting gender and serumcholestrol, and PC4 focusing on age and maxheartrate.
 
 Visualization Insights: The 2D scatter plot of PC1 vs. PC2 shows how observations cluster or separate in this reduced space, which can reveal patterns or relationships not easily visible in the high-dimensional data.
 
@@ -89,9 +93,15 @@ Then, we incremented the depth all the way to 15, and found that a depth of 7 yi
 
 We performed a similar experiment for Min Samples Leaf and found that a value of 2 yields the highest accuracy.
 
-With these changes, we got the following score for decision tree. Accuracy: 0.9042, F1 Score: 0.9123, Precision: 0.9353, Recall: 0.8904. Almost all the scores were above 90%, which shows that decision tree is an effective model to use for this dataset.
+With these changes, we got the following score for decision tree. Accuracy: 0.9119, F1 Score: 0.9187, Precision: 0.9489, Recall: 0.8904. Almost all the scores were above 90%, which shows that decision tree is an effective model to use for this dataset.
 
-For next steps, we can potentially feed in features extracted from PCA to see if a better model can be trained.
+Here's the confusion matrix for our predictions:
+
+![Decision Tree Classifier Depth vs Accuracy](./public/confusion_matrix.png)
+
+As we can see, there are more false negatives than false positives. This is why our recall score is lower and precision is higher. There is a trade-off between maximizing precision and recall, so we would favor this model if we were looking to ensure that patients who actually do not have heart disease do not get mislabeled.
+
+For next steps, we can potentially feed in features extracted from PCA or another feature reduction method to see if a better model can be trained.
 
 ### KMeans
 
@@ -134,6 +144,15 @@ Silhouette Score = 0.637
 
 Using 2 components in GMM and the given labels, we attempted to see how well the model is able to seperate the labels too. This did not yield very strong results with a 56 percent accuracy obtained using GMM model. For the future, we can try seperating on a redcuded feature set and try other methods to potentially increase the accuracy.
 
+
+### Next Steps
+
+For data preprocessing, our next steps are to perform data augmentation so there are more patients represented with no cardiovascular diseae. This will make our datset more balanced and prevent overfitting further. We also want to try a supervised method for feature reduction instead of PCA.
+
+For supervised learning algorithms, we plan to run an ensemble learning algorithm such as the Random Forest classifier and see if that improves accuracy/precision/recall. We also want to run logistic regression as it's well suited for classification.
+
+Lastly, we are lacking accuracy with our unsupervised learning algorithms, with both K-Means and GMM only producing slightly better classification than a random coin toss. We are hoping to improve these through more research into unsupervised methods for classification tasks with a large number of features.
+
 ## Timeline
 
 See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
@@ -142,11 +161,11 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 
 | Name      | Contribution                 |
 | --------  | ---------------------------- |
-| Suzan     | Website, Methods, Results    |
-| Natasha   | Results, Gantt Chart         |
-| Kalp      | Results & Discussion         |
-| Chih-Chun | Problem Definition, Methods  |
-| Eric      | Intro/Background             |
+| Suzan     | Data Cleaning, Decision Tree |
+| Natasha   | Unsupervised Learning        |
+| Kalp      | Supervised, GMM              |
+| Chih-Chun | K-Means, PCA                 |
+| Eric      | PCA, Data cleaning           |
 
 ## References
 [^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
