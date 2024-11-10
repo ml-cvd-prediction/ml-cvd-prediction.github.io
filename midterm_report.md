@@ -73,7 +73,13 @@ We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/d
 We used [KMeans from Sci-Kit Learn](https://scikit-learn.org/1.5/modules/generated/sklearn.cluster.KMeans.html) to train our model. KMeans is able to quickly converge to k cluster centroids and find out the typical values of features for a group that have cardiovascular diseases, making results highly interpretable. For our project, we first tried using all features with KMeans, then later with partial features after PCA to evaluate if a better model can be trained. We also tried various values of K to determine the best outcome for a specific number of features. 
 
 ### GMM (Unsupervised Learning)
+
 We used [GMM from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.mixture.GaussianMixture.html) to train our model. GMM is able to quickly converge to a given number of components and find out the typical values of features for a group that have cardiovascular diseases, making results highly interpretable. For our project, we first tried using all features with GMM, then later with partial features after PCA to evaluate if a better model can be trained. We also tried various values for the number of components to determine the best outcome for a specific number of features. 
+
+### DBSCAN (Unsupervised Learning)
+
+We used [DBSCAN from Sci-Kit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html) 
+to train our model. DBSCAN is able to group together closely connected points and separates loosely connected points, allowing for clustering patients that have shared risk factors. For our project, we first tried tuning the parameters necessary for performing DBSCAN. Currently, we are trying to optimize the DBSCAN performance accuracy.
 
 ## Results and Discussion
 
@@ -134,6 +140,23 @@ Silhouette Score = 0.637
 
 Using 2 components in GMM and the given labels, we attempted to see how well the model is able to seperate the labels too. This did not yield very strong results with a 56 percent accuracy obtained using GMM model. For the future, we can try seperating on a redcuded feature set and try other methods to potentially increase the accuracy.
 
+### DBSCAN
+
+We used specific methods to estimate the values for epsilon and minimum points. As there are more than 2 features within the dataset, the proper minimum points estimation is [double](https://medium.com/@tarammullin/dbscan-parameter-estimation-ff8330e3a3bd) the dimensionality of the dataset.
+
+The optimal epsilon value can be determined from calculating the average distance between each point and its nearest k neighbors, where k = MinPts. From the [NearestNeighbors](https://scikit-learn.org/1.5/modules/neighbors.html) algorithm, plotting the average-k distances in ascending order results in the following graph:
+
+![Parameter Estimation for Epsilon](./public/nn_parameter.png)
+
+We will select the point of the maximum curvature to estimate the epsilon value. From the graph, the best estimate for epsilon is 21. For the future, we can focus on utilizing the parameters to find the best clustering performance
+for the DBSCAN algorithm.
+
+## Next Steps
+
+Here is a summary for next steps to focus on for the final report:
+1. Optimize performance of DBSCAN with estimated parameters
+2. Create final video proposal
+
 ## Timeline
 
 See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
@@ -160,13 +183,3 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 
 
 [^5]: Palechor, Fabio Mendoza et al. “Cardiovascular Disease Analysis Using Supervised and Unsupervised Data Mining Techniques.” J. Softw. 12 (2017): 81-90.
-
-
-
-
-
-
-
-
-
-
