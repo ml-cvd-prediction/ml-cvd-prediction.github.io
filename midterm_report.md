@@ -150,6 +150,18 @@ Silhouette Score = 0.637
 
 Using 2 components in GMM and the given labels, we attempted to see how well the model is able to seperate the labels too. This did not yield very strong results with a 56 percent accuracy obtained using GMM model. For the future, we can try seperating on a redcuded feature set and try other methods to potentially increase the accuracy.
 
+### DBSCAN
+
+We used specific methods to estimate the values for epsilon and minimum points. As there are more than 2 features within the dataset, the proper minimum points estimation is [double](https://medium.com/@tarammullin/dbscan-parameter-estimation-ff8330e3a3bd) the dimensionality of the dataset.
+
+The optimal epsilon value can be determined from calculating the average distance between each point and its nearest k neighbors, where k = MinPts. From the [NearestNeighbors](https://scikit-learn.org/1.5/modules/neighbors.html) algorithm, plotting the average-k distances in ascending order results in the following graph:
+
+![Parameter Estimation for Epsilon](./public/nn_parameter.png)
+
+We will select the point of the maximum curvature to estimate the epsilon value. From the graph, the best estimate for epsilon is 21. For the future, we can focus on utilizing the parameters to find the best clustering performance
+for the DBSCAN algorithm.
+
+
 ## Timeline
 
 See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
