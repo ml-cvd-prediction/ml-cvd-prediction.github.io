@@ -6,7 +6,7 @@
 
 - [Proposal](https://ml-cvd-prediction.github.io/proposal)
 - [Midterm Report](https://ml-cvd-prediction.github.io/midterm_report)
-- [Final Report]()
+- [Final Report](https://ml-cvd-prediction.github.io/final_report)
 
 ## Directory and File Structure
 
