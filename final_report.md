@@ -154,13 +154,13 @@ These were our results: Accuracy: 0.9464, F1 Score: 0.9517, Precision: 0.9583, R
 
 The accuracy of .95 was slightly higher than that of the decision tree at .91. Below is our confusion matrix for the RF model.
 
-![Confusion Matrix for Random Forest Classifier](rf-nonlda.png)
+![Confusion Matrix for Random Forest Classifier](./public/rf-nonlda.png)
 
 For the LDA-reduced data, these were our results: Accuracy: 0.8391, F1 Score: 0.8562, Precision: 0.8562, Recall: 0.8562.
 
 The accuracy if 12.7% is lower when we do not use the original features, so this is one tradeoff to consider when using training models on feature-reduced data.
 
-![Confusion Matrix for Feature-reduced data and Random Forest Classifier](rf-lda.png)
+![Confusion Matrix for Feature-reduced data and Random Forest Classifier](./public/rf-lda.png)
 
 
 ### Neural Network (Supervised Learning)
