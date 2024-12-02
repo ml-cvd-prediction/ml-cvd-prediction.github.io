@@ -187,6 +187,8 @@ This plot visualizes the decision boundary created by the SVM model for the LDA-
 - **Decision Boundary (LDA Features)**:
   ![SVM Decision Boundary (LDA Features)](./public/decisionboundary.png)
 
+The results from the SVM model demonstrate strong performance on both the original and LDA-reduced feature sets, with the LDA-reduced features slightly outperforming the original in terms of accuracy (91.19% vs. 90.80%), F1-score, precision, and recall. The best parameters for the original features used a linear kernel (`C: 0.1, kernel: linear`), indicating that the data was largely linearly separable. In contrast, the LDA-reduced features performed best with an RBF kernel (`C: 100, kernel: rbf, gamma: 0.1`), suggesting that the dimensionality reduction via LDA introduced non-linear patterns that the RBF kernel captured effectively. The improvement with LDA features highlights the effectiveness of feature reduction in enhancing model performance by simplifying the data while retaining its essential structure. Overall, the SVM's ability to adapt to both linear and non-linear relationships made it highly effective across both feature sets.
+
 ### KMeans
 
 We first trained KMeans through all features and tested with the amount of cluster k. We were able to see that with k=2 clusters, the model performed the best. 
