@@ -98,8 +98,9 @@ From LDA, we were able to select features that had higher weights. This reductio
 We used [Decision Tree Classifier from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to train our model. Decision Tree Classifier was chosen because we could easily visualize in a tree what features help determine the predicted label as it creates a clear cutoffs for a binary outcome. For this model, we directly used all features after data cleaning to train our model. 
 
 ### Neural Network (Supervised Learning)
+We utilized [Logistic Regression from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/sklearn.linear_model.LogisticRegression.html) to train our model with different hyperparameters. We also explored its variants using an l1 and an l2 penaly. Logistic Regression is the simplest classification model and hence, we wanted to use it as a baseline to compare all the other models. 
 
-TBU
+We also extended this and used [Neural Networks from Sci-Kit Learn](https://scikit-learn.org/1.5/modules/neural_networks_supervised.html) to train the model in the form of a Multi Layer Perceptron. We tried different sizes of hidden layers as well as 1 or 2 hidden layers. We also tried different activation functions namely, sigmoid, ReLU and tanh.
 
 ### SVM (Supervised Learning)
 
@@ -145,7 +146,15 @@ For next steps, we can potentially feed in features extracted from PCA or anothe
 
 ### Neural Network (Supervised Learning)
 
-TBU
+We first tried using a simple Logistic Regression model for classification. We tried different hyperparameters in the sense that we tried using an l1 penalty (Lasso) as well as an l2 penalty (Ridge). The l2 penalty was performing better on the original data and we got an accuracy of 84.3 percent with a C value of 0.5. We got the following plot for the train loss for different values of C for l2 regularised penalty.
+
+![Hyperparamter tuning for Logistic Regression](./public/hyperparam_nn.png)
+
+For the LDA transformed data, we got the best result using no regularisation (suprisingly) and got Accuracy: 0.9119, F1: 0.9215, Precision: 0.9184 and Recall: 0.9247. 
+
+We then extended this to a neural network with one hidden layer of different sizes as well as tried different activation functions namely sigmoid, tanh and ReLU. For the original data, we got the best result for a NN with size of hidden layer 100 with the tanh activation function. The results were Accuracy: 0.8084, F1: 0.8387, Precision: 0.7927, Recall: 0.8904. For the LDA transformed data, we got the best result for hidden layer size 10 with a ReLU activation function. This is because the LDA transforned data is much simpler and hence, we do not need extra length of hidden layer to get good results, a simple model works better. This is why it gave very similar results to Logistic Regression too. The results were Accuracy: 0.9119, F1: 0.9210, Precision: 0.9241, Recall: 0.9178. We can see that it is a very high score and the confusion matrix for the same is as follows:
+
+![Confusion Matrix for NN](./public/cm_nn_lda.png)
 
 ### SVM (Supervised Learning)
 
