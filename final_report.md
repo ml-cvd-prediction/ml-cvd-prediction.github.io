@@ -159,11 +159,11 @@ The hyperparameters tuned were:
 The model was trained and evaluated using 5-fold cross-validation for both original and LDA-reduced feature sets.
 
 - **Original Features**:
-  - Best Parameters: `{C: <value>, kernel: '<value>', gamma: <value>}`
-  - Best Accuracy: `<value>`
+  - Best Parameters: `{C: 0.1, kernel: 'linear', gamma: scale}`
+  - Best Accuracy: `.870`
 - **LDA-Reduced Features**:
-  - Best Parameters: `{C: <value>, kernel: '<value>', gamma: <value>}`
-  - Best Accuracy: `<value>`
+  - Best Parameters: `{C: 100, kernel: 'rbf', gamma: 0.1}`
+  - Best Accuracy: `.875`
   
 | Features          | Accuracy | F1 Score | Precision | Recall  |
 |--------------------|----------|----------|-----------|---------|
