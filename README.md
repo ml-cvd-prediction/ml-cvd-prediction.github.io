@@ -24,6 +24,7 @@
     ├── public
     │   ├── confusion_matrix.png
     │   ├── dt-3.png
+    |   ├── dt
     │   ├── gmm_output.png
     │   ├── kmeans-1.png
     │   ├── kmeans-2.png
@@ -37,6 +38,9 @@
     │   ├── kmeans.ipynb
     │   ├── mendeley.ipynb
     │   ├── supervised.ipynb
+    │   ├── supervisedfeaturereduction.ipynb
+    │   ├── Supervisedlearningtuning_nn.ipynb
+    │   ├── Supervisedlearningtuningsvm.ipynb
     │   ├── unsupervised.ipynb
     ├── README.md                   
     ├── _config.yml
@@ -69,4 +73,7 @@ This directory holds all the code responsible for different machine learning alg
 - **`/src/kmeans.ipynb`**: Performs the Kmeans algorithm
 - **`/src/mendeley.ipynb`**: Processes and cleans the Mendeley dataset
 - **`/src/supervised.ipynb`**: Performs several supervised algorithms on the dataset
+- **`/src/supervisedfeaturereduction.ipynb`**: Performs LDA reduction algorithm
+- **`/src/Supervisedlearningtuning_nn.ipynb`**: Performs Neural Network on the dataset
+- **`/src/Supervisedlearningtuningsvm.ipynb`**: Performs SVM on the dataset
 - **`/src/unsupervised.ipynb`**: Performs several unsupervised algorithms on the dataset
