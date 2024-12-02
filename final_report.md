@@ -269,7 +269,7 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 | --------  | ---------------------------- |
 | Suzan     | LDA                          |
 | Natasha   | NN                           |
-| Kalp      | NN, Logistic Regression      |
+| Kalp      | NN, LR, GMM    |
 | Chih-Chun | LDA                          |
 | Eric      | SVM                          |
 
