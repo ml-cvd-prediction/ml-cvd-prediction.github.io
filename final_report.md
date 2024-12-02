@@ -172,18 +172,14 @@ The model was trained and evaluated using 5-fold cross-validation for both origi
 
 Two plots illustrate the tuning results for both original and LDA-reduced features.
 
-- **Original Features**:
   ![Grid Search Results (Original Features)](./public/gridresultoriginal.png)
 
-- **LDA Features**:
   ![Grid Search Results (LDA Features)](./public/gridresultlda.png)
   
 These confusion matrices depict the classification results on the test set.
 
-- **Original Features**:
   ![Confusion Matrix (Original Features)](./public/confusionmatrixoriginal.png)
 
-- **LDA Features**:
   ![Confusion Matrix (LDA Features)](./public/confusionmatrixlda.png)
 
 This plot visualizes the decision boundary created by the SVM model for the LDA-reduced features.
