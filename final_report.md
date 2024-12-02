@@ -269,14 +269,9 @@ The optimal epsilon value can be determined from calculating the average distanc
 We will select the point of the maximum curvature to estimate the epsilon value. From the graph, the best estimate for epsilon is 21. For the future, we can focus on utilizing the parameters to find the best clustering performance
 for the DBSCAN algorithm.
 
-### Next Steps
+### Model Comparisons
 
-For data preprocessing, our next steps are to perform data augmentation so there are more patients represented with no cardiovascular disease. This will make our datset more balanced and prevent overfitting further. We also want to try a supervised method for feature reduction instead of PCA.
-
-For supervised learning algorithms, we plan to run an ensemble learning algorithm such as the Random Forest classifier and see if that improves accuracy/precision/recall. We also want to run logistic regression as it's well suited for classification.
-
-Lastly, we are lacking accuracy with our unsupervised learning algorithms, with both K-Means and GMM only producing slightly better classification than a random coin toss. Additionally, we are looking into completing the analysis for DBSCAN, since we have only selected 
-the parameter values for the current midterm report. We are hoping to improve these through more research into unsupervised methods for classification tasks with a large number of features.
+TBD
 
 ## Timeline
 
@@ -286,9 +281,9 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 
 | Name      | Contribution                 |
 | --------  | ---------------------------- |
-| Suzan     | LDA                          |
-| Natasha   | NN                           |
-| Kalp      | NN, LR, GMM    |
+| Suzan     | RF                           |
+| Natasha   | NN, DBSCAN                   |
+| Kalp      | NN, LR, GMM                  |
 | Chih-Chun | LDA                          |
 | Eric      | SVM                          |
 
