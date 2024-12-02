@@ -156,6 +156,13 @@ The accuracy of .95 was slightly higher than that of the decision tree at .91. B
 
 ![Confusion Matrix for Random Forest Classifier](rf-nonlda.png)
 
+For the LDA-reduced data, these were our results: Accuracy: 0.8391, F1 Score: 0.8562, Precision: 0.8562, Recall: 0.8562.
+
+The accuracy if 12.7% is lower when we do not use the original features, so this is one tradeoff to consider when using training models on feature-reduced data.
+
+![Confusion Matrix for Feature-reduced data and Random Forest Classifier](rf-lda.png)
+
+
 ### Neural Network (Supervised Learning)
 
 We first tried using a simple Logistic Regression model for classification. We tried different hyperparameters in the sense that we tried using an l1 penalty (Lasso) as well as an l2 penalty (Ridge). The l2 penalty was performing better on the original data and we got an accuracy of 84.3 percent with a C value of 0.5. We got the following plot for the train loss for different values of C for l2 regularised penalty.
