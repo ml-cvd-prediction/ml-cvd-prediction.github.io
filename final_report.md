@@ -178,7 +178,7 @@ Two plots illustrate the tuning results for both original and LDA-reduced featur
   
 These confusion matrices depict the classification results on the test set.
 
-  ![Confusion Matrix (Original Features)](./public/confusionmatrixoriginal.png)
+  ![Confusion Matrix (Original Features)](./public/Confusionmatrixoriginal.png)
 
   ![Confusion Matrix (LDA Features)](./public/confusionmatrixlda.png)
 
