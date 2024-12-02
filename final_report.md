@@ -149,7 +149,47 @@ TBU
 
 ### SVM (Supervised Learning)
 
-TBU
+We utilized Support Vector Machines (SVM) to train our model, leveraging its effectiveness for binary classification tasks. We evaluated the performance of SVM on both the original feature set and a reduced feature set obtained using Linear Discriminant Analysis (LDA). The SVM model was tuned with hyperparameter optimization using GridSearchCV to achieve the best performance.
+
+The hyperparameters tuned were:
+- \( C \): Regularization parameter [0.1, 1, 10, 100]
+- Kernel: ['linear', 'rbf']
+- Gamma: ['scale', 'auto', 0.1, 1] (for 'rbf' kernel)
+
+The model was trained and evaluated using 5-fold cross-validation for both original and LDA-reduced feature sets.
+
+- **Original Features**:
+  - Best Parameters: `{C: <value>, kernel: '<value>', gamma: <value>}`
+  - Best Accuracy: `<value>`
+- **LDA-Reduced Features**:
+  - Best Parameters: `{C: <value>, kernel: '<value>', gamma: <value>}`
+  - Best Accuracy: `<value>`
+  
+| Features          | Accuracy | F1 Score | Precision | Recall  |
+|--------------------|----------|----------|-----------|---------|
+| Original Features | `0.9080`| `0.9172`| `0.9236` | `0.9110`|
+| LDA Features      | `0.9119`| `0.9215`| `0.9184` | `0.9247`|
+
+Two plots illustrate the tuning results for both original and LDA-reduced features.
+
+- **Original Features**:
+  ![Grid Search Results (Original Features)](./path-to-original-grid.png)
+
+- **LDA Features**:
+  ![Grid Search Results (LDA Features)](./path-to-lda-grid.png)
+  
+These confusion matrices depict the classification results on the test set.
+
+- **Original Features**:
+  ![Confusion Matrix (Original Features)](./path-to-original-cm.png)
+
+- **LDA Features**:
+  ![Confusion Matrix (LDA Features)](./path-to-lda-cm.png)
+
+This plot visualizes the decision boundary created by the SVM model for the LDA-reduced features.
+
+- **Decision Boundary (LDA Features)**:
+  ![SVM Decision Boundary (LDA Features)](./path-to-lda-decision-boundary.png)
 
 ### KMeans
 
