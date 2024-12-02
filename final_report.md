@@ -103,31 +103,6 @@ TBU
 
 ### SVM (Supervised Learning)
 
-The given notebook outlines the application of supervised machine learning for classification, leveraging Linear Discriminant Analysis (LDA) for feature reduction and Support Vector Machine (SVM) for classification. Below is an overview and suggestions for extending the project:
-
-### Overview:
-1. **Dataset and Preprocessing:**
-   - The dataset is loaded, features (`X`) and target (`y`) are separated, and a train-test split (80/20) is performed.
-
-2. **Feature Reduction:**
-   - LDA is used to reduce the dimensionality of the data. The transformation is visualized with a scatter plot.
-
-3. **Hyperparameter Tuning:**
-   - GridSearchCV is employed to tune the SVM hyperparameters (`C`, `kernel`, `gamma`) for both original and LDA-reduced features using 5-fold cross-validation.
-   - The best parameters and accuracies are reported for both approaches.
-
-4. **Model Evaluation:**
-   - The best models (from original and LDA features) are evaluated on the test data for metrics like accuracy, F1-score, precision, and recall.
-
-5. **Visualization:**
-   - Confusion matrices are plotted to analyze the performance.
-
----
-
-
-
-### SVM (Supervised Learning)
-
 We utilized Support Vector Machines (SVM) from Sci-Kit Learn to train our model. SVMs are particularly effective for binary classification tasks and are well-suited to handle high-dimensional data, making them a strong choice for predicting cardiovascular disease. For our project, we trained the SVM model on the cleaned dataset with all features included and then re-evaluated its performance after applying Principal Component Analysis (PCA) for dimensionality reduction. We selected the radial basis function (RBF) kernel to capture potential non-linear decision boundaries. To optimize the model, we conducted a grid search with cross-validation to tune the hyperparameters \( C \) (regularization strength) and \( \gamma \) (kernel coefficient). Additionally, we compared the SVM's performance on the original feature set with its performance on the reduced feature set to assess the impact of dimensionality reduction on key metrics such as accuracy, precision, and recall.
 
 ### KMeans (Unsupervised Learning)
