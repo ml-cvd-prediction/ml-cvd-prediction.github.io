@@ -287,12 +287,14 @@ For each model, we looked at their scores compared against its own with hyperpar
 | :-----------: | :----------------: | :-------------------: | :--------------: |:-------: |
 | KMeans w/ PCA | 0.1569             | 0.5934                | 0.6487           | 0.577    |
 | GMM w/ PCA    | 0.12               | 0.583                 | 0.637            | 0.567    |
-
+| DBSCAN        | 0.0761             | 0.5810                | -0.3942          | 0.327    |
 We can see that Random Forest Classifier performs the best to detect cardiovascular disease with this specific dataset.
 
 ## Conclusion/Next Steps
 
 Previously, Ogunpola et al. [^4] ran all these supervised machine learning methods on the Cleveland and Mendeley datasets separately. With the random forest classifer, they achieved an accuracy of 98.6% and 91.09% on each respectively. When we combined the datasets, we achieved an accuracy of 94.6% which is close to the average of the two accuracies. Similar results hold for the rest of the supervised methods we used. Therefore, we were able to achieve a high accuracy while only training the model on one combined dataset instead of both separately, proving that our data cleaning was effecive.
+
+Unsupervised models are still unable to perform as well and barely have 60 percent accuracy which is a little better than random guessing. There are no previous results for these models that we can compare too. We can probably try out some sort of data augmentation techniques to gain better transformed data from which clustering might become easier.
 
 ## Timeline
 
