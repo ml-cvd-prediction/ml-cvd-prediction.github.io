@@ -283,10 +283,10 @@ For each model, we looked at their scores compared against its own with hyperpar
 | Logistic Regression w/ LDA   | 0.9119   | 0.9210   | 0.9241    | 0.9178 |
 | SVM w/ LDA               | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
 
-| Models        | Completeness Score | Fowlkes-Mallows Score | Silhouette Score |
-| :-----------: | :----------------: | :-------------------: | :--------------: |
-| KMeans w/ PCA | 0.1569             | 0.5934                | 0.6487           |
-| GMM w/ PCA    | 0.12               | 0.583                 | 0.637            |
+| Models        | Completeness Score | Fowlkes-Mallows Score | Silhouette Score | Accuracy |
+| :-----------: | :----------------: | :-------------------: | :--------------: |:-------: |
+| KMeans w/ PCA | 0.1569             | 0.5934                | 0.6487           | 0.577    |
+| GMM w/ PCA    | 0.12               | 0.583                 | 0.637            | 0.567    |
 
 We can see that Random Forest Classifier performs the best to detect cardiovascular disease with this specific dataset.
 
