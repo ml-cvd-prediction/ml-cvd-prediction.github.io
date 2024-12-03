@@ -273,21 +273,26 @@ for the DBSCAN algorithm.
 
 For each model, we looked at their scores compared against its own with hyperparameters tuned or trained with feature reduced datasets and took the scores of the highest performing one.
 
-| Models                   | Accuracy | F1 Score | Precision | Recall | 
-| :----------------------: | :------: | :------: | :-------: | :----: |
-| Decision Tree Classifier | 0.9119   | 0.9187   | 0.9489    | 0.8904 | 
-| **Random Forest Classifier** | **0.9464**   | **0.9517**   | **0.9583**    | **0.9452** | 
-| XGBoost Classifier       | 0.9272   | 0.9338   | 0.9504    | 0.9178 |
-| KNN Classifier           | 0.7433   | 0.7729   | 0.7651    | 0.7808 |
-| Neural Network w/ LDA    | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
-| Logistic Regression w/ LDA   | 0.9119   | 0.9210   | 0.9241    | 0.9178 |
-| SVM w/ LDA               | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
+Supervised
+
+| Models                       | Accuracy   | F1 Score   | Precision  | Recall     | 
+| :--------------------------: | :--------: | :--------: | :--------: | :--------: |
+| Decision Tree Classifier     | 0.9119     | 0.9187     | 0.9489     | 0.8904     | 
+| **Random Forest Classifier** | **0.9464** | **0.9517** | **0.9583** | **0.9452** | 
+| XGBoost Classifier           | 0.9272     | 0.9338     | 0.9504     | 0.9178     |
+| KNN Classifier               | 0.7433     | 0.7729     | 0.7651     | 0.7808     |
+| Neural Network w/ LDA        | 0.9119     | 0.9215     | 0.9184     | 0.9247     |
+| Logistic Regression w/ LDA   | 0.9119     | 0.9210     | 0.9241     | 0.9178     |
+| SVM w/ LDA                   | 0.9119     | 0.9215     | 0.9184     | 0.9247     |
+
+Unsupervised
 
 | Models        | Completeness Score | Fowlkes-Mallows Score | Silhouette Score | Accuracy |
-| :-----------: | :----------------: | :-------------------: | :--------------: |:-------: |
+| :-----------: | :----------------: | :-------------------: | :--------------: | :------: |
 | KMeans w/ PCA | 0.1569             | 0.5934                | 0.6487           | 0.577    |
 | GMM w/ PCA    | 0.12               | 0.583                 | 0.637            | 0.567    |
 | DBSCAN        | 0.0761             | 0.5810                | -0.3942          | 0.327    |
+
 We can see that Random Forest Classifier performs the best to detect cardiovascular disease with this specific dataset.
 
 ## Conclusion/Next Steps
@@ -298,17 +303,17 @@ Unsupervised models are still unable to perform as well and barely have 60 perce
 
 ## Timeline
 
-See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
+See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBF47mMFQLJwyKfN5Npfvi9Q?e=N6BWWO) for our Gantt Chart.
 
 ## Contributors
 
 | Name      | Contribution                 |
 | --------  | ---------------------------- |
-| Suzan     | RF                           |
-| Natasha   | NN, DBSCAN                   |
+| Suzan     | RF, DT, Data Cleaning        |
+| Natasha   | DBSCAN                       |
 | Kalp      | NN, LR, GMM                  |
-| Chih-Chun | LDA                          |
-| Eric      | SVM                          |
+| Chih-Chun | KMeans, LDA                  |
+| Eric      | PCA, SVM                     |
 
 ## References
 [^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
