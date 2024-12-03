@@ -15,8 +15,6 @@ Both databases contains 12 features and a target variable specifying whether or 
 
 We want to use machine learning models to predict if someone has cardiovascular disease from various health metrics. Most of the prior studies [^3] focused on supervised learning algorithms for making predictions; however, our project will focus on both unsupervised and supervised learning for more comprehensive results.
 
-<<<<<<< HEAD
-=======
 ## Methods - Data Processing
 
 ### Data Cleaning
@@ -273,15 +271,26 @@ for the DBSCAN algorithm.
 
 ### Model Comparisons
 
-TBD
->>>>>>> 83700be4aceea6be5684d2eb8a3016f8e2401143
+For each model, we looked at their scores compared against its own with hyperparameters tuned or trained with feature reduced datasets and took the scores of the highest performing one.
+
+| Models                   | Accuracy | F1 Score | Precision | Recall | 
+| :----------------------: | :------: | :------: | :-------: | :----: |
+| Decision Tree Classifier | 0.9119   | 0.9187   | 0.9489    | 0.8904 | 
+| **Random Forest Classifier** | **0.9464**   | **0.9517**   | **0.9583**    | **0.9452** | 
+| Neural Network w/ LDA    | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
+| SVM w/ LDA               | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
+
+| Models        | Completeness Score | Fowlkes-Mallows Score | Silhouette Score |
+| :-----------: | :----------------: | :-------------------: | :--------------: |
+| KMeans w/ PCA | 0.1569             | 0.5934                | 0.6487           |
+| GMM w/ PCA    | 0.12               | 0.583                 | 0.637            |
+
+We can see that Random Forest Classifier performs the best to detect cardiovascular disease with this specific dataset.
 
 ## Timeline
 
 See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
 
-<<<<<<< HEAD
-=======
 ## Contributors
 
 | Name      | Contribution                 |
@@ -291,7 +300,6 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 | Kalp      | NN, LR, GMM                  |
 | Chih-Chun | LDA                          |
 | Eric      | SVM                          |
->>>>>>> 83700be4aceea6be5684d2eb8a3016f8e2401143
 
 ## References
 [^1]: S. Hossain et al., “Machine Learning Approach for predicting cardiovascular disease in Bangladesh: Evidence from a cross-sectional study in 2023 - BMC Cardiovascular Disorders,” BioMed Central, https://bmccardiovascdisord.biomedcentral.com/articles/10.1186/s12872-024-03883-2.
@@ -300,14 +308,6 @@ See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu
 
 [^3]: A. Javaid et al., “Medicine 2032: The Future of Cardiovascular Disease Prevention with Machine Learning and Digital Health Technology,” American Journal of Preventive Cardiology, vol. 12, p. 100379, Dec. 2022. doi:10.1016/j.ajpc.2022.100379.
 
-<<<<<<< HEAD
 [^4]: Ogunpola, A.; Saeed, F.; Basurra, S.; Albarrak, A.M.; Qasem, S.N. Machine Learning-Based Predictive Models for Detection of Cardiovascular Diseases. Diagnostics 2024, 14, 144. https://doi.org/10.3390/diagnostics14020144
 
 [^5]: Palechor, Fabio Mendoza et al. “Cardiovascular Disease Analysis Using Supervised and Unsupervised Data Mining Techniques.” J. Softw. 12 (2017): 81-90.
-=======
-
-[^4]: Ogunpola, A.; Saeed, F.; Basurra, S.; Albarrak, A.M.; Qasem, S.N. Machine Learning-Based Predictive Models for Detection of Cardiovascular Diseases. Diagnostics 2024, 14, 144. https://doi.org/10.3390/diagnostics14020144
-
-
-[^5]: Palechor, Fabio Mendoza et al. “Cardiovascular Disease Analysis Using Supervised and Unsupervised Data Mining Techniques.” J. Softw. 12 (2017): 81-90.
->>>>>>> 83700be4aceea6be5684d2eb8a3016f8e2401143
