@@ -121,7 +121,7 @@ We used [GMM from Sci-Kit Learn](https://scikit-learn.org/dev/modules/generated/
 ### DBSCAN (Unsupervised Learning)
 
 We used [DBSCAN from Sci-Kit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html) 
-to train our model. DBSCAN is able to group together closely connected points and separates loosely connected points, allowing for clustering patients that have shared risk factors. For our project, we first tried tuning the parameters necessary for performing DBSCAN. Currently, we are trying to optimize the DBSCAN performance accuracy.
+to train our model. DBSCAN is able to group together closely connected points and separates loosely connected points, allowing for clustering patients that have shared risk factors. For our project, we first tried tuning the parameters necessary for performing DBSCAN. To optimize the best DBSCAN performance accuracy, we compared combinations of all features to find the best aggregated clustering.
 
 ## Results and Discussion
 
@@ -260,14 +260,42 @@ Using 2 components in GMM and the given labels, we attempted to see how well the
 
 ### DBSCAN
 
-We used specific methods to estimate the values for epsilon and minimum points. As there are more than 2 features within the dataset, the proper minimum points estimation is [double](https://medium.com/@tarammullin/dbscan-parameter-estimation-ff8330e3a3bd) the dimensionality of the dataset.
+We used specific methods to estimate the values for epsilon and minimum points. As there are more than 2 features within the dataset, the proper minimum points estimation is [double](https://medium.com/@tarammullin/dbscan-parameter-estimation-ff8330e3a3bd) the dimensionality of the dataset. As this dataset has 12 features, we would set MinPts = 24.
 
 The optimal epsilon value can be determined from calculating the average distance between each point and its nearest k neighbors, where k = MinPts. From the [NearestNeighbors](https://scikit-learn.org/1.5/modules/neighbors.html) algorithm, plotting the average-k distances in ascending order results in the following graph:
 
-![Parameter Estimation for Epsilon](./public/nn_parameter.png)
+![Parameter Estimation for Epsilon](./public/epsilon-estimation.png)
 
-We will select the point of the maximum curvature to estimate the epsilon value. From the graph, the best estimate for epsilon is 21. For the future, we can focus on utilizing the parameters to find the best clustering performance
-for the DBSCAN algorithm.
+From the graph above, we have represented all distances as sorted observations based on the nearest neighbors calculated. 
+
+We will select the point of the maximum curvature to estimate the epsilon value. This calculation was determined by using the [Elbow Estimation](https://www.scikit-yb.org/en/latest/api/cluster/elbow.html) method. As such, we are presented with the graph providing a more accurate estimation of epsilon:
+
+![Elbow Method Estimation for Epsilon](./public/epsilon-elbow-estimation.png)
+
+From calculating the kneedle point, we acquire a value of 3.703 for epsilon estimation. Using our estimated parameters, the next step is to compare all combinations of the 12 features to find the best aggregated clustering. To assess the correlation coefficients between all features, a correlation coefficient for the DBSCAN analysis was created:
+
+![Confusion Matrix for DBSCAN Feature Correlation](./public/dbconfusionmatrix.png)
+
+The confusion matrix itself shows lower correlative values between all 12 features. There are feature-combinations with higher values, such as Feature 11 & Feature 12 at 0.31 as well as Feature 4 & Feature 12 at 0.29. However, the vast majority of features are poorly correlated, as shown by the lower correlative values. 
+
+We also attempted graphing all graph combinations for all features. This was an additional attempt for measuring correlation between different features:
+
+![Full Feature Graph Matrix w/Noise](./public/output-withnoise.png)
+
+As most of the dataset had noisy points, we decided to filter the noise for providing cleaner correlative results. After removing the noise, we were able to generate the following graph:
+
+![Full Feature Graph Matrix w/o Noise](./public/output-withoutnoise.png)
+
+From the graph matrix, the vast majority of features have seldom clustering, with fewer combinations having a proper clustering representation. 
+
+This is further represented within the metrics collected:
+Davies-Bouldin Index = 6.96
+Adjusted Random score = 0.05
+Silhouette Score = -0.39
+Completeness Score = 0.076
+Fowlkes-Mallows Score = 0.58
+
+Overall, the results indicate that DBSCAN was a poor choice for assessing clustering performance for our particular dataset. Possible reasons include the high dimensionality, where it could become difficult to track distance from separate points, as well as having clusters containing varying densities, which skews the data representation.
 
 ### Model Comparisons
 

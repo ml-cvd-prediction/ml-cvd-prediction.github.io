@@ -30,6 +30,8 @@
     │   ├── decisionboundary.png
     │   ├── dt-3.png
     |   ├── dt
+    |   ├── epsilon-elbow-estimation.png
+    |   ├── epsilon-estimation.png
     │   ├── gmm_output.png
     │   ├── gridresultlda.png
     │   ├── gridresultoriginal.png
