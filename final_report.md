@@ -290,6 +290,10 @@ For each model, we looked at their scores compared against its own with hyperpar
 
 We can see that Random Forest Classifier performs the best to detect cardiovascular disease with this specific dataset.
 
+## Conclusion
+
+Previously, Ogunpola et al. [^4] ran all these supervised machine learning methods on the Cleveland and Mendeley datasets separately. With the random forest classifer, they achieved an accuracy of 98.6% and 91.09% on each respectively. When we combined the datasets, we achieved an accuracy of 94.6% which is close to the average of the two accuracies. Similar results hold for the rest of the supervised methods we used. Therefore, we were able to achieve a high accuracy while only training the model on one combined dataset instead of both separately, proving that our data cleaning was effecive.
+
 ## Timeline
 
 See [here](https://gtvault-my.sharepoint.com/:x:/g/personal/nmohanty8_gatech_edu/Ea0hvb17CY9PqYDmi1OoNPgBdbaerT9mzkF-UBq1l0d3eA?e=fmUT9p) for our Gantt Chart.
