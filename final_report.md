@@ -287,7 +287,7 @@ For each model, we looked at their scores compared against its own with hyperpar
 | :-----------: | :----------------: | :-------------------: | :--------------: |:-------: |
 | KMeans w/ PCA | 0.1569             | 0.5934                | 0.6487           | 0.577    |
 | GMM w/ PCA    | 0.12               | 0.583                 | 0.637            | 0.567    |
-
+| DBSCAN        | 0.0761             | 0.5810                | -0.3942          | 0.327    |
 We can see that Random Forest Classifier performs the best to detect cardiovascular disease with this specific dataset.
 
 ## Conclusion
