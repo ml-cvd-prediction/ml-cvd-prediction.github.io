@@ -22,14 +22,27 @@
     ├── environment 
     │   └── 7641_project_env.yml
     ├── public
+    │   ├── cm_nn_lda.png
     │   ├── confusion_matrix.png
+    │   ├── confusionmatrixlda.png
+    │   ├── Confusionmatrixoriginal.png
+    │   ├── dbconfusionmatrix.png
+    │   ├── decisionboundary.png
     │   ├── dt-3.png
     |   ├── dt
     │   ├── gmm_output.png
+    │   ├── gridresultlda.png
+    │   ├── gridresultoriginal.png
+    │   ├── hyperparam_nn.png
     │   ├── kmeans-1.png
     │   ├── kmeans-2.png
     │   ├── kmeans-3.png
+    │   ├── lda-1.png
     │   ├── nn-parameter.png
+    │   ├── output-withnoise.png
+    │   ├── output-withoutnoise.png
+    │   ├── rf-lda.png
+    │   ├── rf-nonlda.png
     │   └── targetvs.png
     ├── src 
     │   ├── cleveland.ipynb
@@ -41,11 +54,12 @@
     │   ├── supervisedfeaturereduction.ipynb
     │   ├── Supervisedlearningtuning_nn.ipynb
     │   ├── Supervisedlearningtuningsvm.ipynb
-    │   ├── unsupervised.ipynb
-    ├── README.md                   
+    │   ├── unsupervised.ipynb                   
     ├── _config.yml
+    ├── final_report.md
     ├── midterm_report.md
     ├── notes.md
+    ├── proposal.md
     └── README.md
 
 ## `/csvs/`
