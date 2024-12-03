@@ -277,7 +277,10 @@ For each model, we looked at their scores compared against its own with hyperpar
 | :----------------------: | :------: | :------: | :-------: | :----: |
 | Decision Tree Classifier | 0.9119   | 0.9187   | 0.9489    | 0.8904 | 
 | **Random Forest Classifier** | **0.9464**   | **0.9517**   | **0.9583**    | **0.9452** | 
+| XGBoost Classifier       | 0.9272   | 0.9338   | 0.9504    | 0.9178 |
+| KNN Classifier           | 0.7433   | 0.7729   | 0.7651    | 0.7808 |
 | Neural Network w/ LDA    | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
+| Logistic Regression w/ LDA   | 0.9119   | 0.9210   | 0.9241    | 0.9178 |
 | SVM w/ LDA               | 0.9119   | 0.9215   | 0.9184    | 0.9247 |
 
 | Models        | Completeness Score | Fowlkes-Mallows Score | Silhouette Score |
