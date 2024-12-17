@@ -1,6 +1,6 @@
 # CS 7641 Final Project: ML for Cardiovascular Disease Prediction
 
-*Group 16: Suzan Manasreh, Natasha Mohanty, Kalp Vyas, Eric Chang, Chih-Chun Huang*
+*Group 16: [Suzan Manasreh](https://github.com/suzanmanasreh), [Natasha Mohanty](https://github.com/natm125), [Kalp Vyas](https://github.com/kalp121212), [Eric Chang](https://github.com/ericchang707), [Chih-Chun Huang](https://github.com/angryjim123)*
 
 ## Contents
 
